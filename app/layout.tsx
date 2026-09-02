@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Hussein Hakizimana | AI Engineer",
   description:
-    "Hussein Hakizimana is an AI engineer based in Slovenia, born and raised in Burundi.",
+    "Hussein Hakizimana AI engineer based in Slovenia, born and raised in Burundi.",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

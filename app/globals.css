@@ -3,8 +3,17 @@
 :root {
   --background: #fdfdfb;
   --foreground: #121211;
-  --muted: #afb0ad;
-  --yellow: #fdf0a7;
+  --muted: #73746f;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #171716;
+    --foreground: #f5f5ef;
+    --muted: #9a9b95;
+    color-scheme: dark;
+  }
 }
 
 @theme inline {
@@ -58,20 +67,6 @@ body {
 
 .intro-muted {
   color: var(--muted);
-}
-
-.intro-mark {
-  display: inline;
-  padding: 0.03em 0.14em 0.08em;
-  border-radius: 0.22em;
-  color: var(--foreground);
-  text-decoration: none;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-
-.intro-mark-yellow {
-  background: var(--yellow);
 }
 
 @media (max-width: 640px) {

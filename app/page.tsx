@@ -4,21 +4,30 @@ export default function Home() {
       <div className="intro-stack">
         <p className="intro">hey,</p>
         <p className="intro">
-          i&apos;m hussein, an{" "}
-          <span className="intro-mark intro-mark-yellow">ai engineer</span>{" "}
+          i&apos;m hussein. i&apos;m an ai engineer{" "}
           <span className="intro-muted">
-            based in slovenia, born and raised in burundi. i spend most of my
-            time building with{" "}
+            based in slovenia, born and raised in burundi.
           </span>
-          ai agents, <span className="intro-muted">messing around with </span>
-          web data, <span className="intro-muted">and making </span>
-          things i wish existed.
+        </p>
+        <p className="intro">
+          <span className="intro-muted">
+            i spend most of my time building things for{" "}
+          </span>
+          ai agents. <span className="intro-muted">
+            lately i&apos;ve been especially interested in how agents get data from
+            the{" "}
+          </span>
+          web, use tools, and actually get things done. <span className="intro-muted">
+            i write pretty much everything in typescript.
+          </span>
         </p>
         <p className="intro intro-muted">
-          i&apos;m very curious by nature. if something catches my attention,
-          i&apos;ll probably spend way too long figuring out how it works.
+          i get curious about random things way too easily. if something catches
+          my attention, i&apos;ll probably spend the next few hours figuring out how
+          it works, and there&apos;s a good chance i&apos;ll end up building something
+          because of it.
         </p>
-        <p className="intro">i also play a lot of football.</p>
+        <p className="intro">outside of that, i play a lot of football.</p>
       </div>
     </main>
   );
