@@ -27,7 +27,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full">
+        {/* Shared column for every page. Each page sets its own vertical layout. */}
+        <main className="mx-auto max-w-2xl px-6 text-sm tracking-wide">{children}</main>
+      </body>
     </html>
   );
 }
