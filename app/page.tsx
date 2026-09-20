@@ -23,19 +23,13 @@ const focus = [
   },
 ];
 
-const stack = [
-  { label: "Language", text: "TypeScript" },
-  { label: "Runtime", text: "Bun" },
-  { label: "APIs", text: "Hono" },
-  { label: "Database", text: "Postgres, Neon, Drizzle" },
-  { label: "Cache", text: "Upstash" },
-  { label: "Hosting", text: "Vercel, Railway, Cloudflare Workers" },
-  { label: "UI", text: "React, TanStack, Tailwind" },
-  { label: "Auth", text: "better-auth" },
-  { label: "Payments", text: "Stripe" },
-  { label: "Email", text: "Resend" },
-  { label: "Analytics", text: "PostHog" },
-  { label: "Tooling", text: "Turborepo, Vitest, oxlint, zod" },
+const projects = [
+  {
+    name: "webmesh",
+    href: "https://github.com/hakiiizimana/webmesh",
+    text: "Web search, page reading, and browser control for you and your AI agents.",
+    tech: "Bun · TypeScript · agent-browser",
+  },
 ];
 
 // Rows without an href render as plain text, without the arrow.
@@ -73,8 +67,9 @@ function RowSection({ title, children }: { title: string; children: ReactNode })
   );
 }
 
-// Muted label on the left, content on the right.
-function Row({ label, children }: { label: string; children: ReactNode }) {
+// Muted label on the left, content on the right. The label can be a node, so a
+// project name can sit there as a link.
+function Row({ label, children }: { label: ReactNode; children: ReactNode }) {
   return (
     <div className="flex">
       <div className="mr-8 w-full max-w-[100px] text-neutral-500 dark:text-neutral-400">
@@ -109,10 +104,26 @@ export default function Home() {
         ))}
       </RowSection>
 
-      <RowSection title="Stack">
-        {stack.map((item) => (
-          <Row label={item.label} key={item.label}>
-            {item.text}
+      <RowSection title="Projects">
+        {projects.map((project) => (
+          <Row
+            key={project.name}
+            label={
+              <a
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 hover:underline"
+              >
+                {project.name}
+                <ArrowUpRight className="size-3" />
+              </a>
+            }
+          >
+            {project.text}
+            <p className="mt-0.5 text-[13px] text-neutral-500 dark:text-neutral-400">
+              {project.tech}
+            </p>
           </Row>
         ))}
       </RowSection>
