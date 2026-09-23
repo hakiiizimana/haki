@@ -25,11 +25,19 @@ const focus = [
 
 const projects = [
   {
-    name: "webmesh",
+    name: "Webmesh",
     href: "https://github.com/hakiiizimana/webmesh",
     text: "Web search, page reading, and browser control for you and your AI agents.",
     tech: "Bun · TypeScript · agent-browser",
   },
+
+  {
+    name: "AgentFS",
+    href: "https://agentfs.cloud",
+    text: "Cloud file storage for AI Agents",
+    tech: "Bun · TypeScript · Cloudfare workers",
+  },
+
 ];
 
 // Rows without an href render as plain text, without the arrow.
