@@ -43,3 +43,7 @@ next-env.d.ts
 
 # static export
 /out/
+
+# wrangler local state and dev secrets
+/.wrangler/
+.dev.vars

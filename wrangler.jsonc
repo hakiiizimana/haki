@@ -2,10 +2,17 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "haki",
   "compatibility_date": "2026-09-17",
-  // The site is a fully static Next export, so the Worker only serves assets.
+  // The site is a static Next export. The Worker only answers /api/* and the daily cron.
+  "main": "./worker/index.ts",
   "assets": {
     "directory": "./out",
     "html_handling": "auto-trailing-slash",
-    "not_found_handling": "404-page"
-  }
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  // No id: wrangler creates the namespace on first deploy.
+  "kv_namespaces": [{ "binding": "VIDEOS" }],
+  // Local dev reads it from .dev.vars; production from `wrangler secret put`.
+  "secrets": { "required": ["STOPHY_API_KEY"] },
+  "triggers": { "crons": ["0 4 * * *"] }
 }
